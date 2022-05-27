@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import User from "./User";
+import Comments from "./Comments";
+import Hook from "./Hook";
+import Post from "./Post";
 
 function App() {
+  const [choice, setChoice] = useState("user");
+  // const user = Hook("");
+  const comments = Hook("https://jsonplaceholder.typicode.com/comments");
+  const post = Hook("https://jsonplaceholder.typicode.com/posts");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Hello</h1>
+      <button onClick={() => setChoice("user")}> User</button>
+      <button onClick={() => setChoice("comment")}>Comments</button>
+      <button onClick={() => setChoice("post")}>Posts</button>
+      <table>
+        <tr>
+          <td>ID</td>
+          <td>Title</td>
+          <td>Body</td>
+        </tr>
+        {/* {choice === "user" && <User user={user} />} */}
+        {choice === "comment" && <Comments comments={comments} />}
+        {choice === "post" && <Post post={post} />}
+      </table>
+    </>
   );
 }
 
