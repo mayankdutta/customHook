@@ -18,8 +18,8 @@ function App() {
       <button onClick={() => setChoice("post")}>Posts</button>
       <table>
         {choice === "user" && <User user={user} />}
-        {/* {choice === "comment" && <Comments comments={comments} />} */}
-        {/* {choice === "post" && <Post post={post} />} */}
+        {choice === "comment" && <Comments comments={comments} />}
+        {choice === "post" && <Post post={post} />}
       </table>
     </>
   );
