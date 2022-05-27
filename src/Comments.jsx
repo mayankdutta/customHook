@@ -10,10 +10,10 @@ const Comments = ({ comments }) => {
       {comments.map((value, i) => {
         return (
           <tr key={i}>
-            <td key={5 * i + 1}>{value.id}</td>
-            <td key={5 * i + 2}>{value.name}</td>
-            <td key={5 * i + 3}>{value.email}</td>
-            <td key={5 * i}>{value.body}</td>
+            <td key={5 * i + 1}>{JSON.stringify(value.id)}</td>
+            <td key={5 * i + 2}>{JSON.stringify(value.name)}</td>
+            <td key={5 * i + 3}>{JSON.stringify(value.email)}</td>
+            <td key={5 * i}> {JSON.stringify(value.body)}</td>
           </tr>
         );
       })}
