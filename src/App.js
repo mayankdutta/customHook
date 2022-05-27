@@ -6,7 +6,7 @@ import Post from "./Post";
 
 function App() {
   const [choice, setChoice] = useState("user");
-  // const user = Hook("");
+  const user = Hook("https://jsonplaceholder.typicode.com/users");
   const comments = Hook("https://jsonplaceholder.typicode.com/comments");
   const post = Hook("https://jsonplaceholder.typicode.com/posts");
 
@@ -17,14 +17,9 @@ function App() {
       <button onClick={() => setChoice("comment")}>Comments</button>
       <button onClick={() => setChoice("post")}>Posts</button>
       <table>
-        <tr>
-          <td>ID</td>
-          <td>Title</td>
-          <td>Body</td>
-        </tr>
-        {/* {choice === "user" && <User user={user} />} */}
-        {choice === "comment" && <Comments comments={comments} />}
-        {choice === "post" && <Post post={post} />}
+        {choice === "user" && <User user={user} />}
+        {/* {choice === "comment" && <Comments comments={comments} />} */}
+        {/* {choice === "post" && <Post post={post} />} */}
       </table>
     </>
   );

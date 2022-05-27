@@ -7,6 +7,8 @@ const Hook = (URL) => {
 
   const fetchData = async (URL) => {
     const response = await axios.get(URL);
+    const responseString = JSON.stringify(response.data);
+    console.log(responseString);
     setData(response.data);
   };
 
